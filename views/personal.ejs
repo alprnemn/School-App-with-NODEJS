@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/schoolLogo.png" >
+    <title>Home</title>
+    
+    <script src="https://kit.fontawesome.com/57190959f8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   
+   <!-- Container -->
+   <div class="flex">
+
+      <!-- Sidebar -->
+      <%- include('./partials/sidebar.ejs') %>
+
+      <!-- Nav and Content -->
+      <div class="flex flex-col w-full h-screen">
+
+            <!-- Nav -->
+            <%- include('./partials/nav.ejs') %>
+
+            <!-- Personel Dropdown -->
+            <%- include('./partials/personelDropdown.ejs') %>
+            
+            <!-- Burger Dropdown -->
+            <%- include('./partials/burgerDropdown.ejs') %>
+
+
+         <!-- Page Content -->
+         <section class="w-full h-screen overflow-auto bg-indigo-100 flex flex-col ">
+            
+            <!-- Container -->
+            <div class="w-full bg-slate-400 p-12 mt-10 md:mt-0 flex items-center justify-center">
+
+                <!-- Personal Content -->
+                <div class="bg-white w-10/12 md:w-8/12 shadow overflow-hidden sm:rounded-lg">
+
+                    <!-- Modal -->
+                    <%- include('./partials/personalModal.ejs',student) %>
+
+                    <!-- Header -->
+                    <div class="px-3 py-4 sm:px-6 bg-blue-950">
+                        <h3 class="text-lg leading-6 font-medium text-white">
+                            Student Informations
+                        </h3>
+
+                    </div>
+
+
+                    <!-- Personal Informations -->
+                    <div class="border-t border-gray-200 ">
+                        <dl>
+                            
+                            <!-- Image -->
+                            <div class="bg-white flex justify-center px-4 py-5 ">
+                                <div id="imagePersonal" class="relative group cursor-pointer">
+                                    <img src="../static/images/<%= student.image %>" alt="profile" class="rounded-full w-[120px] h-[120px] ">
+                                    <i class="fa-solid fa-pen-to-square absolute top-[40%] left-[40%] text-3xl text-black opacity-0 group-hover:opacity-100 duration-300 cursor-pointer"></i>
+                                </div>
+                            </div>
+
+                            <!-- StudentNo -->
+                            <div class="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Student No
+                                </dt>
+                                <dd class="mt-1 text-sm flex justify-between text-gray-900 sm:mt-0 sm:col-span-2">
+                                    <p><%= studentno %></p>
+                                </dd>
+                            </div>
+
+                            <!-- Fullname -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-700">
+                                    Full Name
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+                                    <p><%= student.firstname %> <%= student.lastname %></p>
+                                    <i id="updatefullNameModalIcon" class="fa-solid fa-user-pen text-xl text-blue-950 cursor-pointer hover:scale-110 duration-200  z-0"></i>
+                                </dd>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    E-mail
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+                                    <p><%= email %></p>
+                                </dd>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-700">
+                                    Phone
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+                                    <p><%= student.phone %></p>
+                                    <i id="updatePhone" class="fa-solid fa-user-pen text-xl text-blue-950 cursor-pointer hover:scale-110 duration-200  z-0"></i>
+                                </dd>
+                            </div>
+
+                            <!-- Faculty -->
+                            <div class="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Faculty
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+                                    <p><%= faculty %></p>
+                                </dd>
+                            </div>
+
+                            <!-- Program -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-700">
+                                    Program
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+                                    <p><%= program %></p>
+                                   
+                                </dd>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500">
+                                    Status
+                                </dt>
+                                <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+                                    <% if (status) { %>
+                                        <p class="my-1 text-green-700 font-medium"> Active </p>
+                                       <% } else { %>
+                                        <p class="my-1 text-red-700 font-medium"> Passive </p>
+                                      <% } %>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <!-- Footer -->
+            <%- include('./partials/footer.ejs') %>
+
+         </section>
+
+      </div>
+
+   </div>
+   <script src="../static/js/personalModal.js"></script>
+   <script src="../static/js/home.js"></script>
+</body>
+</html>

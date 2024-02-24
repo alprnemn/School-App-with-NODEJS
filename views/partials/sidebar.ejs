@@ -1,0 +1,82 @@
+<!-- Sidebar -->
+<aside id="sidebar" class="hidden z-40 w-64 h-screen transition-transform  sm:flex sm:translate-x-0" >
+      
+    <!-- Side Container -->
+    <div class="h-full w-full overflow-y-auto bg-blue-950 flex flex-col justify-between">
+
+          <!-- Personal Infos -->
+          <div class="h-2/6 w-full  flex flex-col items-center justify-center py-12">
+             <img src="../static/images/<%= student.image %>" alt="profile" class="rounded-full w-[120px] h-[120px]">
+             <div class="font-medium text-lg text-white py-2">
+                <p><%= student.firstname %> <%= student.lastname %> </p>
+                <p><%= studentno %></p>
+             </div>
+          </div>
+          
+          <!-- List Elements -->
+          <div class="h-3/6 flex flex-col justify-start w-full ">
+             <ul class="space-y-2 font-medium ">
+               <!-- Home -->
+                <li>
+                   <a href="/home" class="flex text-white items-center text-xl p-2 rounded-lg text-White
+                   hover:bg-indigo-300 hover:text-blue-900 group">
+                      <svg class="flex-shrink-0 w-6 h-6">
+                            <i class="fa-solid fa-house"></i>
+                      </svg>
+                      <span class="flex-1 ms-3">Home</span>
+                   </a>
+                </li>
+                <!-- Personal -->
+                <li>
+                   <a href="/personal" class="flex text-white items-center text-xl p-2 rounded-lg text-White
+                   hover:bg-indigo-300 hover:text-blue-900 group">
+                      <svg class="flex-shrink-0 w-6 h-6">
+                            <i class="fa-solid fa-user"></i>
+                      </svg>
+                      <span class="flex-1 ms-3">Personal Info</span>
+                   </a>
+                </li>
+                <!-- Courses -->
+                <li>
+                   <a href="/courseRegister" class="flex text-white items-center text-xl p-2 rounded-lg text-White
+                   hover:bg-indigo-300 hover:text-blue-900 group">
+                      <svg class="flex-shrink-0 w-6 h-6">
+                            <i class="fa-solid fa-book"></i>
+                      </svg>
+                      <span class="flex-1 ms-3">Course Register</span>
+                   </a>
+                </li>
+                <!-- Classes -->
+                <li>
+                   <a href="#" class="flex text-white items-center text-xl p-2 rounded-lg text-White
+                   hover:bg-indigo-300 hover:text-blue-900 group">
+                      <svg class="flex-shrink-0 w-6 h-6">
+                        <i class="fa-solid fa-users"></i>
+                      </svg>
+                      <span class="flex-1 ms-3">Classes</span>
+                   </a>
+                </li>
+                <!-- Schedules -->
+                <li>
+                   <a href="/schedule" class="flex text-white items-center text-xl p-2 rounded-lg text-White
+                   hover:bg-indigo-300 hover:text-blue-900 group">
+                      <svg class="flex-shrink-0 w-6 h-6">
+                        <i class="fa-solid fa-calendar-days"></i>
+                      </svg>
+                      <span class="flex-1 ms-3">Schedule</span>
+                   </a>
+                </li>
+             </ul>
+          </div>
+
+          <!-- Logout -->
+          <div class="h-1/6 w-full  flex justify-center items-center p-8 ">
+             <a href="/logout" class=" text-white items-center text-2xl p-2 rounded-lg text-White
+                hover:bg-indigo-300 hover:text-blue-900 font-medium group" >
+                <i class="fa-solid fa-right-from-bracket fa-rotate-180"></i>   Logout
+             </a>
+          </div>
+
+    </div>
+
+ </aside>

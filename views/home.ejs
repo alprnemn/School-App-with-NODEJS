@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/schoolLogo.png" >
+    <title>Home</title>
+    
+    <script src="https://kit.fontawesome.com/57190959f8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   
+   <!-- Container -->
+   <div class="flex">
+
+      <!-- Sidebar -->
+      <%- include('./partials/sidebar.ejs') %>
+
+      <!-- Nav and Content -->
+      <div class="flex flex-col w-full h-screen">
+
+            <!-- Nav -->
+            <%- include('./partials/nav.ejs') %>
+
+            <!-- Personel Dropdown -->
+            <%- include('./partials/personelDropdown.ejs') %>
+            
+            <!-- Burger Dropdown -->
+            <%- include('./partials/burgerDropdown.ejs') %>
+
+
+         <!-- Page Content -->
+         <section class="w-full h-screen overflow-auto bg-indigo-100 flex flex-col ">
+            
+            <!-- Top Content -->
+            <div class="flex w-full flex-col xl:flex-row mt-14 md:mt-0">
+
+               <!-- Welcome -->
+               <%- include('../views/partials/welcome.ejs') %>
+               
+               <!-- Announcements -->
+               <%- include('../views/partials/announcements.ejs',announcements) %>
+               
+               
+            </div>
+
+            <!-- Middle Content(Links) -->
+            <div class="w-full flex-col flex md:flex-row flex-wrap justify-around items-center  ">
+
+               <!-- Library -->
+               <a href="/" class="w-[220px] h-[160px] rounded-3xl m-4 border border-black border-[3px] 
+               flex flex-col items-center justify-center group hover:scale-110 duration-300">
+                     <i class="fa-solid fa-book text-7xl text-green-700"></i>
+                     <h1 class="font-medium text-xl ">Library</h1>
+               </a>
+
+               <!-- Student Affairs Office -->
+               <a href="/" class="w-[220px] h-[160px] rounded-3xl m-4 border border-black border-[3px] flex flex-col items-center justify-center group hover:scale-110 duration-300">
+                     <i class="fa-solid fa-chalkboard-user text-7xl text-orange-400"></i>
+                     <h1 class="font-medium text-xl ">Student Affairs Office</h1>
+               </a>
+
+               <!-- Applications -->
+               <a href="/" class="w-[220px] h-[160px] rounded-3xl m-4 border border-black border-[3px] flex flex-col items-center justify-center group hover:scale-110 duration-300">
+                  <i class="fa-solid fa-tablet-screen-button text-7xl text-blue-700"></i>
+                  <h1 class="font-medium text-xl ">Applications</h1>
+               </a>
+
+               <!-- Contact -->
+               <a href="/" class="w-[220px] h-[160px] rounded-3xl m-4 border border-black border-[3px] flex flex-col items-center justify-center group hover:scale-110 duration-300">
+                  <i class="fa-solid fa-envelope text-7xl text-red-800"></i>
+                  <h1 class="font-medium text-xl ">Contact</h1>
+               </a>
+
+               <a href="/" class="w-[220px] h-[160px] rounded-3xl m-4 border border-black border-[3px] flex flex-col items-center justify-center group hover:scale-110 duration-300">
+                  <i class="fa-solid fa-book text-7xl text-yellow-500"></i>
+                  <h1 class="font-medium text-xl ">Courses Informations</h1>
+               </a>
+
+            </div>
+            
+            <!-- Footer -->
+            <%- include('./partials/footer.ejs') %>
+
+         </section>
+
+      </div>
+
+   </div>
+
+   <script src="../static/js/home.js"></script>
+</body>
+</html>

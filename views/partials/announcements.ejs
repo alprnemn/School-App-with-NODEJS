@@ -1,0 +1,27 @@
+<!-- Announcements -->
+<div class="w-12/12 xl:w-6/12  flex flex-col p-12 border-t-2 border-gray-400 xl:border-t-0   ">
+
+    <!-- Announcements Title -->
+    <div class="w-full h-[70px] bg-indigo-300 flex items-center p-4">
+       <i class="fa-regular fa-bell text-5xl text-blue-950 "></i> <p class="inline-block text-2xl ms-2 font-medium text-blue-950">Announcements</p> 
+    </div>
+    
+    <!-- Announcements -->
+    <div class="w-full h-[400px] bg-slate-300 p-4 overflow-auto">
+       
+       <!-- Announcement Items -->
+       <% announcements.forEach((ann) => { %>
+        
+         <article class="flex my-2">
+            <img src="<%= ann.image %>" class="w-[80px] h-[80px] rounded-3xl" alt="asd">
+            <div class="flex flex-col p-1 font-medium">
+               <h3><%= ann.title %></h3>
+               <small><%= ann.description %></small>
+            </div>
+         </article>
+       <% }) %>
+       
+    </div>
+    
+    
+ </div>

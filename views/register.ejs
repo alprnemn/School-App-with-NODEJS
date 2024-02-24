@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/schoolLogo.png" >
+    <title>Register</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body background="../static/images/bgbooks.jpg" class="bg-cover">
+
+    <!-- Register Form Container -->
+    <div class="w-screen h-screen flex items-center justify-center">
+        
+        <!-- Register Form Section -->
+        <div class="w-[350px] h-[840px] md:w-[550px] md:h-[900px] bg-indigo-200 rounded-3xl flex flex-col items-center justify-center relative">
+            
+            <!-- Arrow -->
+            <a href="/">
+                <span class="absolute left-2 top-2 text-blue-800 hover:scale-110 duration-300 text-4xl">&#129128;</span>
+            </a>
+            
+            <!-- School Image -->
+            <img src="../static/images/schoolLogo.png" 
+               class="w-[120px] h-[120px] md:w-[250px] md:h-[250px] " 
+            alt="school ">
+           
+            <!-- Register Form -->
+            <%- include('./partials/registerForm.ejs',faculties)%>
+
+            <!-- Popup -->
+            <%- include('./partials/pop-up.ejs')%>
+  
+
+        </div>
+    </div>
+
+    <script src="../static/js/pop-up.js"></script>
+</body>
+</html>

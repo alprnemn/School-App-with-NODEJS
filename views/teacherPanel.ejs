@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/schoolLogo.png" >
+    <title>Home</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body background="../static/images/bgbooks.jpg" class="bg-cover" >
+
+    <%- include('./partials/pop-up.ejs') %>
+
+    <!-- Login Form Container -->
+    <div class="w-screen h-screen flex items-center justify-center ">
+
+        <!-- Login Form Section -->
+        <div class="w-[350px] h-[600px] md:w-[550px] md:h-[650px] bg-indigo-200 rounded-3xl flex flex-col items-center justify-center">
+            
+            
+                <img src="../static/images/schoolLogo.png" class=" w-[200px] h-[200px] md:w-[250px] md:h-[250px]  " alt="school">
+            
+            
+                
+                <!-- Teacher Form -->
+                <form class="max-w-md mx-auto" method="post">
+
+                    <!-- csrf -->
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                    <!-- First Name -->
+                    <div class="grid md:grid-cols-2 md:gap-6">
+
+                        <!-- Firstname -->
+                        <div class="mb-5 w-full">
+                            <label for="teachername" class="mb-2 text-lg font-medium text-gray-700 ">Teacher Firstname*</label>
+                            <input type="text" id="teachername" name="teachername" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm md:text-md font-medium rounded-lg block w-full p-2.5 " placeholder="Robert" required />
+                        </div>
+                        
+                       
+                        <!-- Button -->
+                        <div class="flex items-center justify-center">
+                            <button type="submit" class=" w-[140px] h-[40px]  md:w-[170px] md:h-[50px] mt-2 text-white bg-blue-800 hover:scale-110 duration-300 font-medium rounded-lg text-sm    text-center">Sign-Up</button>
+                        </div>
+                        
+                    </div>
+                </form>
+
+                <small class="font-medium text-center mx-4">Here you can manage course registration requests made by students. You have the ability to set up class schedules, define classroom settings, and determine course hours.</small>
+  
+
+        </div>
+    </div>
+
+    <script src="../static/js/pop-up.js"></script>
+</body>
+</html>

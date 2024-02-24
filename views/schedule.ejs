@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/schoolLogo.png" >
+    <title>Home</title>
+    
+    <script src="https://kit.fontawesome.com/57190959f8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   
+   <!-- Container -->
+   <div class="flex">
+
+      <!-- Sidebar -->
+      <%- include('./partials/sidebar.ejs') %>
+
+      <!-- Nav and Content -->
+      <div class="flex flex-col w-full h-screen">
+
+            <!-- Nav -->
+            <%- include('./partials/nav.ejs') %>
+
+            <!-- Personel Dropdown -->
+            <%- include('./partials/personelDropdown.ejs') %>
+            
+            <!-- Burger Dropdown -->
+            <%- include('./partials/burgerDropdown.ejs') %>
+
+
+            <!-- Page Content -->
+            <section class="w-full h-screen overflow-auto bg-indigo-100 flex flex-col ">
+                
+                <div class="w-full p-12 mt-10 md:mt-0 flex items-center justify-center">
+
+                    <!-- Schedule -->
+                    <div class="bg-white w-10/12 md:w-8/12 shadow overflow-hidden text-white sm:rounded-lg">
+        
+                        <!-- Header -->
+                        <div class="px-3 py-4 sm:px-6 bg-blue-950">
+                            <h3 class="text-lg leading-6 font-medium text-white">
+                                Schedule
+                            </h3>
+        
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row justify-around items-center p-6 flex-wrap">
+
+                            <% if (coursesregistrations.length == 0) { %>
+                                    <h1 class="text-black"><b>Your course registrations are pending approval. They will be listed here once approved.</b></h1>
+                            <% } %>
+
+
+                            <% coursesregistrations.forEach(course => { %>
+                             
+                                <div class="w-[200px] h-[350px] m-3 bg-blue-900 flex flex-col justify-center items-center font-medium rounded-3xl">
+                                    <h1 class="py-2 text-center"><%= course.Course.name %></h1>
+                                    <p class="py-2"><%= course.dayofWeek %></p>
+                                    <p class="py-2"><%= course.Classroom.name %></p>
+                                    <p class="py-2"><%= course.Teacher.firstname %></p>
+                                    <p class="py-2"><%= course.startTime %></p>
+                                    <p class="py-2"><%= course.endTime %></p>
+                                </div>
+
+                            <% }) %>
+                            
+                            
+                        </div>
+
+                    </div>
+        
+                </div>
+                
+                <!-- Footer -->
+                <%- include('./partials/footer.ejs') %>
+
+            </section>
+
+      </div>
+
+   </div>
+
+   <script src="../static/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!-- Left Content (TOP) -->
+<div class="w-12/12 xl:w-6/12  flex flex-col p-12">
+                  
+    <!-- Welcome-Dates -->
+    <div class="w-full h-[235px] bg-indigo-300 flex flex-col">
+       
+       <!-- Welcome -->
+       <div class="font-medium text-xl bg-blue-950 text-white h-[50px] flex items-center p-4">
+          <h3 >Welcome, <%= firstname %> <%= lastname %></h3>
+       </div>
+
+       <!-- Dates -->
+       <div class="w-full h-full flex p-4 bg-indigo-300 p-4 font-medium">
+          
+          <!-- Today Date -->
+          <div class="p-4 w-6/12 h-full flex items-center">
+             <i class="fa-solid fa-clock text-blue-950 text-3xl md:text-4xl xl:text-6xl"></i>
+             <div class="flex flex-col">   
+                <p class="inline-block font-medium text-blue-950 text-lg md:text-xl xl:text-2xl ms-2"> Today Date</p>
+                <p class="block ms-2 text-blue-900 text-sm md:text-md xl:text-lg"><%= todaydate %></p>
+             </div>
+          </div>
+          
+          <!-- Last Login -->
+          <div class="p-4 w-6/12 h-full flex items-center">
+             <i class="fa-regular fa-calendar-check text-blue-950 text-3xl md:text-4xl xl:text-6xl"></i>
+             <div class="flex flex-col">
+                <p class="inline-block font-medium text-blue-950 text-lg md:text-xl xl:text-2xl ms-2"> Last Login</p>
+                <p class="block ms-2 text-blue-900 text-sm md:text-md xl:text-lg"><%= lastlogin %></p>
+             </div>   
+          </div>
+          
+       </div>
+       
+    </div>
+    
+    <!-- Registiration Informations -->
+    <div class="w-full h-[235px] bg-indigo-300 flex flex-col">
+
+       <!-- Title -->
+       <div class="font-medium text-xl bg-blue-950 text-white h-[50px] flex items-center p-4">
+          <h3 >Registiration Info</h3>
+       </div>
+       
+       <!-- Registiration Informations -->
+       <div class="flex">
+          
+          <!-- Infos -->
+          <div class="hidden  w-2/12 h-full md:flex flex-col justify-center items-start bg-indigo-300 p-4 font-medium text-sm md:text-md">
+             <p class="my-1">Faculty</p>
+             <p class="my-1">Program</p>
+             <p class="my-1">Status</p>
+          </div>
+          
+          <!-- Infos -->
+          <div class=" w-10/12 h-full  flex flex-col justify-center items-start bg-indigo-300 p-4 font-medium text-sm md:text-md">
+             <p class="my-1"> <%= faculty %> </p>
+             <p class="my-1"> <%= program %> </p>
+             <% if (status) { %>
+               <p class="my-1 text-green-700 font-medium"> Active </p>
+              <% } else { %>
+               <p class="my-1 text-red-700 font-medium"> Passive </p>
+             <% } %>
+             
+          </div>
+       </div>
+    </div>
+ </div>

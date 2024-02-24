@@ -1,0 +1,82 @@
+
+<!-- Register Form -->
+<form class="max-w-md mx-auto" method="post">
+
+    <!-- csrf -->
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+    <!-- First-Last Name -->
+    <div class="grid md:grid-cols-2 md:gap-6">
+
+        <!-- Firstname -->
+        <div class="mb-5 w-full">
+            <label for="firstname" class="mb-2 text-lg font-medium text-gray-700 ">Firstname*</label>
+            <input type="text" id="firstname" name="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm md:text-md font-medium rounded-lg block w-full p-2.5 " placeholder="Alperen" required />
+        </div>
+
+        <!-- Lastname -->
+        <div class="mb-5 w-full">
+            <label for="lastname" class="mb-2 text-lg font-medium text-gray-700 ">Lastname*</label>
+            <input type="text" id="lastname" name="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm md:text-md font-medium rounded-lg block w-full p-2.5 " placeholder="Emin" required />
+        </div>
+
+    </div>
+
+    <!-- Faculty&Bachelor -->
+    <div class="grid md:grid-cols-2 md:gap-6">
+
+        <!-- Faculty -->
+        <div class="mb-5 w-full">
+            <label for="faculty" class="mb-2 text-lg font-medium text-gray-700 ">Select Faculty*</label>
+            <select id="faculty" name="faculty" class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+
+                <option selected>Choose a Faculty</option>
+                <% faculties.forEach((faculty) => { %>
+                    <option value="<%= faculty.id %>"><%= faculty.name %></option>
+                <% }) %>
+
+            </select>
+        </div>
+
+        <!-- Program -->
+        <div class="mb-5 w-full">
+            <label for="bachelor" class="mb-2 text-lg font-medium text-gray-700 ">Select Bachelor*</label>
+            <select id="bachelor" name="program" class="bg-gray-50 overflow-y border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                <option selected>Choose a Bachelor</option>
+                <% programs.forEach((program) => { %>
+                 
+                    <option value="<%= program.id %>"><%= program.name %></option>
+                    
+                <% }) %>
+            </select>
+        </div>
+
+    </div>
+
+    <!-- Email -->
+    <div class="mb-5 w-full">
+        <label for="email" class="mb-2 text-lg font-medium text-gray-700 ">E-Mail*</label>
+        <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm md:text-md font-medium rounded-lg block w-full p-2.5 " placeholder="example@gmail.com" required />
+        <small class="font-medium text-md">Your school number will be sent to your email address.</small>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-5 w-full">
+        <label for="password" class="mb-2 text-lg font-medium text-gray-700 ">Password* <small>(6-15 characters)</small></label>
+        <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm md:text-md font-medium rounded-lg block w-full p-2.5 " placeholder="******" required />
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="mb-5 w-full">
+        <label for="confirmpassword" class="mb-2 text-lg font-medium text-gray-700 ">Confirm Password*</label>
+        <input type="password" id="confirmpassword" name="confirmpassword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm md:text-md font-medium rounded-lg block w-full p-2.5 " placeholder="******" required />
+        
+    </div>
+
+    <!-- Button -->
+    <div class="flex items-center justify-center">
+        <button type="submit" class=" w-[140px] h-[40px]  md:w-[170px] md:h-[50px] mt-2 text-white bg-blue-800 hover:scale-110 duration-300 font-medium rounded-lg text-sm    text-center">Sign-Up</button>
+    </div>
+
+  </form>
+  

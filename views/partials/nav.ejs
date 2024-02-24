@@ -1,0 +1,25 @@
+<!-- Nav -->
+<nav class="fixed md:static w-full h-[75px] bg-blue-950 flex justify-between items-center z-10">
+
+    <!-- Logo -->
+    <div class="flex items-center">
+       <img src="../static/images/schoolLogo.png" class=" w-[55px] h-[55px] md:w-[70px] md:h-[65px]" alt="school">
+       <p class="font-medium text-lg md:text-2xl text-white">School Management System</p>
+    </div>
+
+    <!-- Personal -->
+    <div class="hidden md:flex md:items-center md:w-[250px] md:h-full ">
+       <div id="personalMenu" class="flex items-center p-2 rounded-2xl group hover:bg-indigo-200 text-white hover:text-blue-900 cursor-pointer">
+          <img src="../static/images/<%= student.image %>" class="md:w-[35px] md:h-[35px] rounded-full" alt="school">
+          <p class="text-lg font-medium px-2"><%= student.firstname %> <%= student.lastname %> &#11167;</p>
+       </div>
+    </div>
+
+    
+
+    <!-- BurgerMenu -->
+    <div id="burgerMenu" class="w-[42px] h-[42px] md:hidden flex items-center justify-center border border-white border-[2px] rounded-xl mx-4 ">
+       <i class="fa-solid fa-bars text-white text-xl"></i>
+    </div>
+
+ </nav>

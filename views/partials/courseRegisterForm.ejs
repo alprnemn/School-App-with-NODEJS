@@ -1,0 +1,63 @@
+<form method="post">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <!-- Fullname -->
+    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-700">
+            Course 1
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+            <label for="course1" class="mb-2 text-lg font-medium text-gray-700 "></label>
+            <select id="course1" name="course1" class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                <option selected>Course 1</option>
+                
+                <% courses.forEach((course) => { %>
+                    <option value="<%= course.id %>"><%= course.name %></option>
+                <% }) %>
+
+            </select>
+        </dd>
+    </div>
+
+    <!-- StudentNo -->
+    <div class="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">
+            Course 2
+        </dt>
+        <dd class="mt-1 text-sm flex justify-between text-gray-900 sm:mt-0 sm:col-span-2">
+            <label for="course2" class="mb-2 text-lg font-medium text-gray-700 "></label>
+            <select id="course2" name="course2" class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                <option selected>Course 2</option>
+                <% courses.forEach((course) => { %>
+                    <option value="<%= course.id %>"><%= course.name %></option>
+                <% }) %>
+            </select>
+        </dd>
+    </div>
+
+    <!-- Fullname -->
+    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-700">
+            Course 3
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 flex justify-between sm:mt-0 sm:col-span-2">
+            <label for="course3" class="mb-2 text-lg font-medium text-gray-700 "></label>
+            <select id="course3" name="course3" class="bg-gray-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+
+                <option selected> Course 3</option>
+                <% electiveCourses.forEach((electiveCourse) => { %>
+                    <option value="<%= electiveCourse.id %>"><%= electiveCourse.name %></option>
+                <% }) %>
+            </select>
+            
+        </dd>
+    </div>
+
+    <!-- Fullname -->
+    <div class="bg-white px-4 py-5 ">
+        <dt class="w-full flex items-center justify-center ">
+            <button type="submit" class=" w-[140px] h-[40px]  md:w-[170px] md:h-[50px] mt-2 text-white bg-blue-800 hover:scale-110 duration-300 font-medium rounded-lg text-sm    text-center">Register</button>
+        </dt>
+        
+    </div>
+    
+</form>

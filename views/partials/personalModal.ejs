@@ -1,0 +1,68 @@
+
+
+<form method="post" action="/personal" id="updatePhoneModal" class="fixed z-5 top-[30%] left-[20%] md:top-[40%] md:left-[40%]  bg-blue-950 hidden ">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="grid gap-6 mb-6 md:grid-cols-2 flex items-center p-5 relative z-2">
+        <div>
+            <label for="phonenumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
+            <input type="text" id="phonenumber" name="phonenumber" class=" text-gray-900 bg-white text-sm rounded-lg p-2.5 " placeholder="John" value="<%= student.phone %>" />
+        </div>
+        <div class="flex items-center">
+            <button type="button" id="closeModalButtonPhone" class="text-white mx-2 bg-blue-700 w-[80px] h-[40px] font-medium rounded-lg text-sm  px-5 py-2.5 text-center" >
+                Close
+            </button>
+            <button type="submit" class="text-white mx-2 bg-blue-700 w-[80px] h-[40px] font-medium rounded-lg text-sm  px-5 py-2.5 text-center">
+                Submit
+            </button>
+        </div>
+    
+    </div>
+</form>
+
+
+
+<form method="post" action="/personal" id="updateFullName" class="fixed z-5 top-[30%] left-[20%] md:top-[40%] md:left-[40%]  bg-blue-950 hidden ">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <div class="grid gap-6 mb-6 md:grid-cols-2 flex items-center p-5 relative z-2">
+        <div>
+            <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Firstname</label>
+            <input type="text" id="firstname" name="firstname" class=" text-gray-900 bg-white text-sm rounded-lg p-2.5 " placeholder="John" value="<%= student.firstname %>" />
+        </div>
+        <div>
+            <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lastname</label>
+            <input type="text" id="lastname" name="lastname" class=" text-gray-900 bg-white text-sm rounded-lg p-2.5 " placeholder="John" value="<%= student.lastname %>" />
+        </div>
+        <div class="flex items-center">
+            <button type="button" id="closeModalButton" class="text-white mx-2 bg-blue-700 w-[80px] h-[40px] font-medium rounded-lg text-sm  px-5 py-2.5 text-center" >
+                Close
+            </button>
+            <button type="submit" class="text-white mx-2 bg-blue-700 w-[80px] h-[40px] font-medium rounded-lg text-sm  px-5 py-2.5 text-center">
+                Submit
+            </button>
+        </div>
+    
+    </div>
+</form>
+
+
+<form method="post" action="/personal?_csrf=<%= csrfToken %>" id="personalImageModal" 
+class="fixed z-5 top-[30%] left-[20%] md:top-[40%] md:left-[40%] bg-blue-950 hidden" enctype="multipart/form-data">
+
+    <div class="grid gap-6 mb-6 md:grid-cols-2 flex items-center p-5 relative z-2">
+        
+        <div>
+            <label for="imagepersonal" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
+            <input type="file" id="imagepersonal" name="imagepersonal" class="text-gray-900 bg-white text-sm rounded-lg p-2.5" />
+        </div>
+
+        <div class="flex items-center">
+            <button type="button" id="closeModalButtonImage" class="text-white mx-2 bg-blue-700 w-[80px] h-[40px] font-medium rounded-lg text-sm  px-5 py-2.5 text-center" >
+                Close
+            </button>
+            <button type="submit" class="text-white mx-2 bg-blue-700 w-[80px] h-[40px] font-medium rounded-lg text-sm  px-5 py-2.5 text-center">
+                Submit
+            </button>
+        </div>
+    
+    </div>
+</form>
